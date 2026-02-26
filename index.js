@@ -59,21 +59,21 @@ function PartyDetails() {
   }
 
   // TODO
+
   const $section = document.createElement('section');
   $section.innerHTML = `
     <section class="artist">
-     <h3>${selectedParty.name} #${selectedParty.id}</h3>
-
-     <p>${selectedParty.description}</p>
+        <h3>${selectedParty.name}  #${selectedParty.id}</h3>
+        <p>Date: ${new Date(selectedParty.date).toDateString()}</p>
+        <p>Location: ${selectedParty.location}</p>
+        <p>${selectedParty.description}</p>
+        <ul>
+            
+        </ul>
    </section>
   `;
   return $section;
 }
-
-/*      <figure>
-       <img alt="${selectedParty.name}" src="${selectedParty.imageUrl}" />
-     </figure> */
-
 
 
 // === Render ===
