@@ -10,19 +10,27 @@ let selectedParty;
 //get entire list of parties from API
 async function getParties() {
   // TODO
-  const fetchAllParties = await fetch(`${API}`);
-  const partiesResults = await fetchAllParties.json();
-  parties = partiesResults.data;
-  render();
+  try{
+    const fetchAllParties = await fetch(`${API}`);
+    const partiesResults = await fetchAllParties.json();
+    parties = partiesResults.data;
+    render();
+  }catch(e){
+    console.error(e);
+  }
 }
 
 async function getParty(id) {
   // TODO
-  const fetchOneParty = await fetch(`${API}/${id}`);
-  const partyResults = await fetchOneParty.json();
-  selectedParty = partyResults.data;
-  
-  render();  
+  try{
+    const fetchOneParty = await fetch(`${API}/${id}`);
+    const partyResults = await fetchOneParty.json();
+    selectedParty = partyResults.data;
+    
+    render();
+  }catch(e){
+    console.error(e);
+  } 
 }
 
 /** Artist name that shows more details about the artist when clicked */
